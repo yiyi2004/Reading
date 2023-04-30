@@ -11,6 +11,7 @@
       - [攻击状态迁移(攻击流量重定向)](#攻击状态迁移攻击流量重定向)
       - [智能诱捕决策机制](#智能诱捕决策机制)
         - [博弈论方法](#博弈论方法)
+        - [智能优化模型](#智能优化模型)
   - [面向智能渗透攻击的欺骗防御方法](#面向智能渗透攻击的欺骗防御方法)
   - [主动防御增强的蜜网系统设计与实现](#主动防御增强的蜜网系统设计与实现)
     - [Note](#note)
@@ -189,6 +190,25 @@
   - ATTIAH A,CHATTERJEE M,ZOU C CA game theoreticapproach to model cyber attack and defense strategies[ C]//2018 IEEE international conference on communications(ICC).Kansas City,MO:IEEE,2018:1-7.
 - [38]Ahmed 等人还将博弈论与攻击图相结合，判断在已知当前攻击者位置的情况下接下来多跳诱捕点的分配策略。
   - ANWAR A H,KAMHOUA C ALESLIE N.Honeypot allocation over attack graphs in cyber deception games[ C ]//2020 international conference on computing,networking andcommunications (ICNC)USA:IEEE2020:502-506
+
+##### 智能优化模型
+
+传统生成诱饵信息的方法大多是根据真实数据集特征生成的，这类诱饵信息中保留了部分源数据的信息，仍存在被攻击者窃取隐私的风险。
+
+- [39]DPSYN提出一种将深度学习与差分隐私相结合自动生成诱饵数据库的方法，这种方法不仅可以根据原有数据集的特征生成相似度较高的数据，也能有效防止在诱饵数据中
+暴露源数据的隐私信息，更加安全。
+  - ABAY N C，AKCORA C G,ZHOU Y,et al.Using deeplearning to generate relational honeydata[ M ]//Autonomouscyber deception.Shanghai,China; Springer,2019:3-19.
+
+除了生成诱饵信息，机器学习还可以与诱捕机制设计相结合，用于进行攻击识别和智能诱捕。
+
+- [40]Nadia提出了一种基于机器学习聚类思想的算法，用于在诱捕点中辨认攻击者，并将结果用于后期的防御策略的配置
+  - EL KAMEL N,EDDABBAH M,LMOUMEN Y,et al.Asmart agent design for cyber security based on honeypot andmachine learning[J].Security and Communication Net-works,2020( 8):9.
+- [42]使用类似的建模方法针对该思想进行了改进，之后又将Cowrie蜜罐与DQN思想相结合，实现了一种自适应的智能SSH蜜罐。
+  - PAUNA A,IACOB A C,BICA I.Qrassh - a self-adaptivessh honeypot driven by q-learning[ C]//2018 internationalconference on communications ( COMM).Bucharest:IEEE2018:441-446.
+- [43]除了Heliza的建模方法之外，SMDP提出将马尔可夫决策过程的方法应用于攻击诱捕中，把连续时间过程转化为等效的离散决策模型，并使用强化学习对该模型进行了训练，最后得到了规避风险、成本效益和时间效益的最优策略。
+  - HUANG L,ZHU Q.Adaptive honeypot engagement throughreinforcement learning of semi - markov decision processes[C]//International conference on decision and game theoryfor security.USA:Springer ,2019 :196-216
+- [44]Takabi提出了一种将欺骗防御与MTD相结合的防御思想，可以用于缓解内部攻击。
+  - TAKABI H,JAFARIAN J H.Insider threat mitigation usingmoving target defense and deception[ C ]//Proceedings ofthe 2017 international workshop on managing insider securitythreats.Texas,USA: Association for Computing Machinery2017:93-96
 
 ## [面向智能渗透攻击的欺骗防御方法](https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C44YLTlOAiTRKibYlV5Vjs7iJTKGjg9uTdeTsOI_ra5_XYgKb8AODfDgUY9FqNFoxU_vuq11dVlyNapdjKhHUlXq&uniplatform=NZKPT)
 
