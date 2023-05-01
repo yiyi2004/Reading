@@ -16,12 +16,6 @@
 
 ### 翻译
 
-$$
-\begin{align}
-x = x + 1
-\end{align}
-$$
-
 ### References
 
 - Abay, N.C., Zhou, Y., Kantarcioglu, M., Thuraisingham, B., Sweeney, L.: Privacy preserving synthetic data release using deep learning. The European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (PKDD 2018) (2018)
