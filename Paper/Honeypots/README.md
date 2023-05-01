@@ -2,7 +2,9 @@
 
 - [蜜罐方向论文](#蜜罐方向论文)
   - [Using Deep Learning to Generate Relational HoneyData](#using-deep-learning-to-generate-relational-honeydata)
-    - [Reference](#reference)
+    - [mount accountant](#mount-accountant)
+    - [翻译](#翻译)
+    - [References](#references)
 
 ## [Using Deep Learning to Generate Relational HoneyData](https://link.springer.com/chapter/10.1007/978-3-030-02110-8_1)
 
@@ -10,7 +12,18 @@
 - honeydata
 - [differential privacy](https://zh.wikipedia.org/wiki/%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81)
 
-### Reference
+### mount accountant
+
+### 翻译
+
+$$
+\begin{align}
+x = x + 1
+\end{align}
+$$
+
+### References
 
 - Abay, N.C., Zhou, Y., Kantarcioglu, M., Thuraisingham, B., Sweeney, L.: Privacy preserving synthetic data release using deep learning. The European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (PKDD 2018) (2018)
 - Dwork, C.: Differential privacy. In: Proceedings of the 33rd International Conference on Automata, Languages and Programming - Volume Part II, ICALP’06, pp. 1–12. SpringerVerlag, Berlin, Heidelberg (2006). DOI 10.1007/11787006_1. URL <http://dx.doi.org/10.1007/> 11787006_1
+- **Abadi, M., Chu, A., Goodfellow, I., McMahan, H.B., Mironov, I., Talwar, K., Zhang, L.: Deep learning with differential privacy. In: Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, pp. 308–318. ACM (2016)**
