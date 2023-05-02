@@ -72,7 +72,7 @@ $$
 
 在我们的提出的工作中，我们在每个批次迭代结束时跟踪隐私损失，用于训练自动编码器。在优化阶段，计算给定迭代 $t \in T$ 中在私有自动编码器上消耗的当前隐私损失 $\varepsilon'$ 的值。当 $\varepsilon'$ 达到最终隐私预算 $\varepsilon$时，训练结束。
 
-根据“moment accountant”方法[1]，如果隐私损失满足以下条件，即对于任意的 $\varepsilon^{\prime}<k_{1}(|B| / n)^{2}T$ ，深度学习网络就是 $(\varepsilon, \delta)$ -差分隐私的，其中 $k_1$ 和 $k_2$ 是常数：
+根据“moment accountant”方法[1]，如果隐私损失满足以下条件，即对于任意的 $\varepsilon^{\prime}k_{1}(|B| / n)^{2}T$ ，深度学习网络就是 $(\varepsilon, \delta)$ -差分隐私的，其中 $k_1$ 和 $k_2$ 是常数：
 
 $$
 \begin{align}
