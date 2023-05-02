@@ -97,22 +97,24 @@ DPSYN的主要目的是生成与真实数据在攻击者背景知识下难以区
 ![Fig. 1.1 Differentially private Synthetic data generation, DPSYN](./images/2023-05-01-19-48-23.png)
 
 $$
-\begin{array}{l}
-\hline \text { Algorithm } 1 \text { DPSYN: Differentially Private Synthetic Data Generation } \\
-\hline \text { Require: } D:\left\{x_{i}, y_{i}\right\}_{i=1}^{m} \text { where } x \in \mathbb{R}^{d} \text { and } y \in \mathbb{R}, \alpha: \text { learning rate } T: \text { iteration number; } \varepsilon \text { : privacy } \\
-\qquad \text { budget; } \delta: \text { Gaussian delta; } \sigma: \text { standard deviation; } C \text { : clipping constant. } \\
-\qquad \left\{D_{1} \ldots D_{k}\right\} \leftarrow \text { partition } D \text { into k groups } \\
-\qquad D^{\prime \prime} \leftarrow\{\} \\
-\qquad \text { for } i \leftarrow 1 \text { to } k \text { do } \\
-\qquad \theta \leftarrow \text { DP-Auto }\left(D_{i}, \alpha, \mathrm{T}, \varepsilon / 2, \delta / 2, \sigma, \mathrm{C}\right) / / \text { see Algorithm } 2 \\
-\qquad E^{\prime} \leftarrow \mathscr{F}\left(X_{i} \cdot \theta\right) \text { where } X_{i} \in D_{i} \\
-\qquad E^{\prime \prime} \leftarrow \text { DPEM }\left(E^{\prime}, \varepsilon / 2, \delta / 2\right) / / \text { see DPEM }[23] \\
-\qquad D_{i}^{\prime} \leftarrow \mathscr{F}\left(E^{\prime \prime} \cdot \theta^{\top}\right) \\
-\qquad D^{\prime \prime} \leftarrow D^{\prime \prime} \cup D_{i}{ }^{\prime} \\
-\qquad \text { end } \\
-\qquad \text { return } D^{\prime \prime} \\
-\hline
-\end{array}
+\begin{align}
+  \begin{array}{l}
+    \hline \text { Algorithm } 1 \text { DPSYN: Differentially Private Synthetic Data Generation } \\
+    \hline \text { Require: } D:\left\{x_{i}, y_{i}\right\}_{i=1}^{m} \text { where } x \in \mathbb{R}^{d} \text { and } y \in \mathbb{R}, \alpha: \text { learning rate } T: \text { iteration number; } \varepsilon \text { : privacy } \\
+    \qquad \text { budget; } \delta: \text { Gaussian delta; } \sigma: \text { standard deviation; } C \text { : clipping constant. } \\
+    \qquad \left\{D_{1} \ldots D_{k}\right\} \leftarrow \text { partition } D \text { into k groups } \\
+    \qquad D^{\prime \prime} \leftarrow\{\} \\
+    \qquad \text { for } i \leftarrow 1 \text { to } k \text { do } \\
+    \qquad \theta \leftarrow \text { DP-Auto }\left(D_{i}, \alpha, \mathrm{T}, \varepsilon / 2, \delta / 2, \sigma, \mathrm{C}\right) / / \text { see Algorithm } 2 \\
+    \qquad E^{\prime} \leftarrow \mathscr{F}\left(X_{i} \cdot \theta\right) \text { where } X_{i} \in D_{i} \\
+    \qquad E^{\prime \prime} \leftarrow \text { DPEM }\left(E^{\prime}, \varepsilon / 2, \delta / 2\right) / / \text { see DPEM }[23] \\
+    \qquad D_{i}^{\prime} \leftarrow \mathscr{F}\left(E^{\prime \prime} \cdot \theta^{\top}\right) \\
+    \qquad D^{\prime \prime} \leftarrow D^{\prime \prime} \cup D_{i}{ }^{\prime} \\
+    \qquad \text { end } \\
+    \qquad \text { return } D^{\prime \prime} \\
+    \hline
+  \end{array}
+\end{align}
 $$
 
 算法2详细展示了DP-Auto模型的细节。我们的私有自编码器采用梯度计算和剪裁等步骤来改善优化过程。在标准的随机训练技术中，梯度是针对批次计算的，而我们则是针对每个训练实例计算梯度。这种方法改善了优化过程，因为它降低了每个实例中存在的梯度的敏感性。梯度的范数定义了优化网络参数的方向。然而，在一些深度网络中，梯度可能不稳定并且波动幅度很大。这种波动可能会抑制学习过程，因为网络的易受攻击性增加。为了避免这种不良情况，我们通过剪裁常数$C$来限制先前计算的梯度的范数。
