@@ -96,7 +96,7 @@ DPSYN的主要目的是生成与真实数据在攻击者背景知识下难以区
 
 ![Fig. 1.1 Differentially private Synthetic data generation, DPSYN](./images/2023-05-01-19-48-23.png)
 
-$$
+<!-- $$
 \begin{align}
   \begin{array}{l}
     \hline \text { Algorithm } 1 \text { DPSYN: Differentially Private Synthetic Data Generation } \\
@@ -115,7 +115,9 @@ $$
     \hline
   \end{array}
 \end{align}
-$$
+$$ -->
+
+![Algorithm 1 DPSYN: Differentially Private Synthetic Data Generation](./images/2023-05-02-19-38-27.png)
 
 算法2详细展示了DP-Auto模型的细节。我们的私有自编码器采用梯度计算和剪裁等步骤来改善优化过程。在标准的随机训练技术中，梯度是针对批次计算的，而我们则是针对每个训练实例计算梯度。这种方法改善了优化过程，因为它降低了每个实例中存在的梯度的敏感性。梯度的范数定义了优化网络参数的方向。然而，在一些深度网络中，梯度可能不稳定并且波动幅度很大。这种波动可能会抑制学习过程，因为网络的易受攻击性增加。为了避免这种不良情况，我们通过剪裁常数$C$来限制先前计算的梯度的范数。
 
