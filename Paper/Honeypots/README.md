@@ -44,7 +44,7 @@ $$
 
 差分隐私是一种数学框架，即使对手具有背景知识，也可以确保隐私保护。差分隐私向聚合统计信息添加随机噪声，以防止冒充攻击。
 
-定理 1.1：如果对于任意相邻数据集 $d$ 和 $d'$，对于任意输出子集 $S \subseteq \{Range}(\mathscr{M})$ ，满足以下条件的随机实值函数 $\mathscr{M}$ 是 $(\varepsilon, \delta)$ -差分隐私的：
+定理 1.1：如果对于任意相邻数据集 $d$ 和 $d'$，对于任意输出子集 $S \subseteq {Range}(\mathscr{M})$ ，满足以下条件的随机实值函数 $\mathscr{M}$ 是 $(\varepsilon, \delta)$ -差分隐私的：
 
 $$
 \begin{align}
