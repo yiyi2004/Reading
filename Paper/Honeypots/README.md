@@ -2,7 +2,7 @@
 
 - [蜜罐方向论文](#蜜罐方向论文)
   - [Using Deep Learning to Generate Relational HoneyData](#using-deep-learning-to-generate-relational-honeydata)
-    - [mount accountant](#mount-accountant)
+    - [moment accountant](#moment-accountant)
     - [翻译](#翻译)
       - [Background](#background)
         - [深度学习](#深度学习)
@@ -18,7 +18,7 @@
 - honeydata
 - [differential privacy](https://zh.wikipedia.org/wiki/%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81)
 
-### mount accountant
+### moment accountant
 
 ### 翻译
 
@@ -48,13 +48,13 @@ $$
 
 $$
 \begin{align}
-\operatorname{Pr}[\mathscr{M}(d) \in S] \leq \exp (\varepsilon) \operatorname{Pr}\left[\mathscr{M}\left(d^{\prime}\right) \in S\right]+\delta .  
+{Pr}[\mathscr{M}(d) \in S] \leq \exp (\varepsilon) {Pr}\left[\mathscr{M}\left(d^{\prime}\right) \in S\right]+\delta .  
 \end{align}
 $$
 
 相邻数据集 $d$ 和 $d'$ 仅在一个元组上有所不同，而其他的元组都相同。
 
-其中， $\operatorname{Pr}[\mathscr{M}(d) \in S]$ 表示在数据集 $d$ 上使用机制 $\mathscr{M}$ 生成输出值在 $S$ 中的概率， $\operatorname{Pr}\left[\mathscr{M}\left(d^{\prime}\right) \in S\right]$ 表示在相邻的数据集  $d'$ 上使用机制 $\mathscr{M}$ 生成输出值在 $S$ 中的概率。 $\varepsilon$ 和 $\delta$ 分别表示机制 $\mathscr{M}$ 的隐私保护程度和随机噪声的量，其中 $\varepsilon$ 越小表示隐私保护程度越高， $\delta$ 越小表示随机噪声越少，也就是机制 $\mathscr{M}$ 更接近于没有添加随机噪声。
+其中， ${Pr}[\mathscr{M}(d) \in S]$ 表示在数据集 $d$ 上使用机制 $\mathscr{M}$ 生成输出值在 $S$ 中的概率， ${Pr}\left[\mathscr{M}\left(d^{\prime}\right) \in S\right]$ 表示在相邻的数据集  $d'$ 上使用机制 $\mathscr{M}$ 生成输出值在 $S$ 中的概率。 $\varepsilon$ 和 $\delta$ 分别表示机制 $\mathscr{M}$ 的隐私保护程度和随机噪声的量，其中 $\varepsilon$ 越小表示隐私保护程度越高， $\delta$ 越小表示随机噪声越少，也就是机制 $\mathscr{M}$ 更接近于没有添加随机噪声。
 
 机制 $\mathscr{M}$ 通过用以下方式定义的随机噪声扰动确定性实值函数 $f$ 来实现 $(\varepsilon, \delta)$ -差分隐私：
 
@@ -72,7 +72,7 @@ $$
 
 在我们的提出的工作中，我们在每个批次迭代结束时跟踪隐私损失，用于训练自动编码器。在优化阶段，计算给定迭代 $t \in T$ 中在私有自动编码器上消耗的当前隐私损失 $\varepsilon'$ 的值。当 $\varepsilon'$ 达到最终隐私预算 $\varepsilon$时，训练结束。
 
-根据“moments accountant”方法[1]，如果隐私损失满足以下条件，即对于任意的 $\varepsilon^{\prime}<k_{1}(|B| / n)^{2} T$ ，深度学习网络就是 $(\varepsilon, \delta)$ -差分隐私的，其中 $k_1$ 和 $k_2$ 是常数：
+根据“moment accountant”方法[1]，如果隐私损失满足以下条件，即对于任意的 $\varepsilon^{\prime}<k_{1}(|B| / n)^{2}T$ ，深度学习网络就是 $(\varepsilon, \delta)$ -差分隐私的，其中 $k_1$ 和 $k_2$ 是常数：
 
 $$
 \begin{align}
