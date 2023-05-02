@@ -52,11 +52,11 @@ $$
 \end{align}
 $$
 
-相邻数据集$d$和$d'$仅在一个元组上有所不同，而其他的元组都相同。
+相邻数据集 $d$ 和 $d'$ 仅在一个元组上有所不同，而其他的元组都相同。
 
-其中，$\operatorname{Pr}[\mathscr{M}(d) \in S]$表示在数据集 $d$ 上使用机制 $\mathscr{M}$生成输出值在 $S$中的概率，$\operatorname{Pr}\left[\mathscr{M}\left(d^{\prime}\right) \in S\right]$表示在相邻的数据集 $d'$ 上使用机制$\mathscr{M}$生成输出值在$S$中的概率。 $\varepsilon$和$\delta$分别表示机制$\mathscr{M}$的隐私保护程度和随机噪声的量，其中$\varepsilon$越小表示隐私保护程度越高，$\delta$越小表示随机噪声越少，也就是机制$\mathscr{M}$更接近于没有添加随机噪声。
+其中， $\operatorname{Pr}[\mathscr{M}(d) \in S]$ 表示在数据集 $d$ 上使用机制 $\mathscr{M}$ 生成输出值在 $S$ 中的概率， $\operatorname{Pr}\left[\mathscr{M}\left(d^{\prime}\right) \in S\right]$ 表示在相邻的数据集  $d'$ 上使用机制 $\mathscr{M}$ 生成输出值在 $S$ 中的概率。 $\varepsilon$ 和 $\delta$ 分别表示机制 $\mathscr{M}$ 的隐私保护程度和随机噪声的量，其中 $\varepsilon$ 越小表示隐私保护程度越高， $\delta$ 越小表示随机噪声越少，也就是机制 $\mathscr{M}$ 更接近于没有添加随机噪声。
 
-机制$\mathscr{M}$通过用以下方式定义的随机噪声扰动确定性实值函数$f$来实现$(\varepsilon, \delta)$-差分隐私：
+机制 $\mathscr{M}$ 通过用以下方式定义的随机噪声扰动确定性实值函数 $f$ 来实现 $(\varepsilon, \delta)$ -差分隐私：
 
 $$
 \begin{align}
@@ -64,15 +64,15 @@ $$
 \end{align}
 $$
 
-其中，z是从零均值高斯机制中随机生成的。在这里，高斯机制的标准差由$\sigma$和$f$的灵敏度$s_f$进行校准，该灵敏度由相邻数据集$s$和$d'$的绝对距离$||f(d) - f(d')||$的最大值定义。高斯机制中$(\varepsilon, \delta)$，$\sigma$和$s_f$之间的关系可以表示为：$\sigma^{2} \varepsilon^{2} \geqslant 2 \ln 1.25 / \delta s_{f}^{2}$
+其中，z是从零均值高斯机制中随机生成的。在这里，高斯机制的标准差由 $\sigma$ 和 $f$ 的灵敏度 $s_f$ 进行校准，该灵敏度由相邻数据集 $s$ 和 $d'$ 的绝对距离 $||f(d) - f(d')||$ 的最大值定义。高斯机制中 $(\varepsilon, \delta)$ ， $\sigma$ 和 $s_f$ 之间的关系可以表示为: $\sigma^{2} \varepsilon^{2} \geqslant 2 \ln 1.25 / \delta s_{f}^{2}$
 
 ##### Differentially Private Composition Theorem
 
 为了达到我们的预期目标，我们使用了序列组合和高级组合定理。
 
-在我们的提出的工作中，我们在每个批次迭代结束时跟踪隐私损失，用于训练自动编码器。在优化阶段，计算给定迭代$t \in T$中在私有自动编码器上消耗的当前隐私损失$\varepsilon'$的值。当$\varepsilon'$达到最终隐私预算$\varepsilon$时，训练结束。
+在我们的提出的工作中，我们在每个批次迭代结束时跟踪隐私损失，用于训练自动编码器。在优化阶段，计算给定迭代 $t \in T$ 中在私有自动编码器上消耗的当前隐私损失 $\varepsilon'$ 的值。当 $\varepsilon'$ 达到最终隐私预算 $\varepsilon$时，训练结束。
 
-根据“moments accountant”方法[1]，如果隐私损失满足以下条件，即对于任意的$\varepsilon^{\prime}<k_{1}(|B| / n)^{2} T$，深度学习网络就是$(\varepsilon, \delta)$-差分隐私的，其中$k_1$和$k_2$是常数：
+根据“moments accountant”方法[1]，如果隐私损失满足以下条件，即对于任意的 $\varepsilon^{\prime}<k_{1}(|B| / n)^{2} T$ ，深度学习网络就是 $(\varepsilon, \delta)$ -差分隐私的，其中 $k_1$ 和 $k_2$ 是常数：
 
 $$
 \begin{align}
@@ -80,7 +80,7 @@ $$
 \end{align}
 $$
 
-其中，$T$是训练步骤的数量，$|B|$是具有给定隐私预算$\varepsilon$、$\delta$和零均值高斯分布标准差$\sigma$的小批量中的样本数量。
+其中， $T$ 是训练步骤的数量， $|B|$ 是具有给定隐私预算 $\varepsilon$ 、 $\delta$ 和零均值高斯分布标准差 $\sigma$ 的小批量中的样本数量。
 
 #### Methodology
 
@@ -90,7 +90,7 @@ $$
 
 DPSYN的主要目的是生成与真实数据在攻击者背景知识下难以区分的合成数据。DPSYN通过差分隐私控制隐私损失，从而保护数据隐私。Abadi等人在差分隐私深度学习上应用了矩账户（moment accountant）[1]。在此基础上，我们对其进行了多项修改，并将其扩展为数据生成模型。
 
-图1.1展示了DPSYN的基本步骤。数据集D包含一系列n个训练样例$\left(x_{1}, y_{1}\right), \ldots,\left(x_{m}, y_{m}\right)$，其中$x \in \mathbb{R}^{d}$，$y \in \mathbb{R}$。我们的学习方法将数据集$\text { D }$分成$\text { k }$组，记为$\left\{D_{1}, \ldots, D_{k}\right\}$。训练样例的分组是基于与训练样例$x \in \mathbb{R}^{d}$相关联的标签$y \in \mathbb{R}$进行的。组号$\text { k }$由唯一的标签号识别。将数据集分成k组$\left\{D_{1}, \ldots, D_{k}\right\}$后，为每个组构建私有的生成自编码器来生成合成数据。
+图1.1展示了DPSYN的基本步骤。数据集D包含一系列n个训练样例 $\left(x_{1}, y_{1}\right), \ldots,\left(x_{m}, y_{m}\right)$ ，其中 $x \in \mathbb{R}^{d}$ ， $y \in \mathbb{R}$ 。我们的学习方法将数据集 $\text { D }$ 分成 $\text { k }$ 组，记为 $\left\{D_{1}, \ldots, D_{k}\right\}$ 。训练样例的分组是基于与训练样例 $x \in \mathbb{R}^{d}$ 相关联的标签 $y \in \mathbb{R}$ 进行的。组号 $\text { k }$ 由唯一的标签号识别。将数据集分成 $\text {k}$ 组 $\left\{D_{1}, \ldots, D_{k}\right\}$ 后，为每个组构建私有的生成自编码器来生成合成数据。
 
 算法1展示了提出方法的详细步骤。具有敏感信息的数据集D被划分为k组（第1行），并使用这些划分好的组来构建私有生成自编码器（第4行）。该过程在Algorithm 2中详细说明。接下来，我们使用激活函数F获取组的私有潜在表示（第5行），并将其注入差分隐私期望最大化（DPEM）函数中。 DPEM函数在中详细说明。 DPEM的主要任务是检测编码数据中的不同潜在模式，并生成具有相似模式的输出数据。这些模式在第7行解码，并附加到合成数据D（第8行）。
 
@@ -117,7 +117,7 @@ $$
 
 算法2详细展示了DP-Auto模型的细节。我们的私有自编码器采用梯度计算和剪裁等步骤来改善优化过程。在标准的随机训练技术中，梯度是针对批次计算的，而我们则是针对每个训练实例计算梯度。这种方法改善了优化过程，因为它降低了每个实例中存在的梯度的敏感性。梯度的范数定义了优化网络参数的方向。然而，在一些深度网络中，梯度可能不稳定并且波动幅度很大。这种波动可能会抑制学习过程，因为网络的易受攻击性增加。为了避免这种不良情况，我们通过剪裁常数$C$来限制先前计算的梯度的范数。
 
-剪裁梯度后，从均值为零、标准差为$\sigma C$的高斯分布中抽取噪声，并将其添加到之前剪裁的梯度上（算法2的第8行）。在训练自编码器时，我们在每个批次迭代结束时跟踪隐私损失。如第2-2行所示，我们计算在给定迭代$t \in T$中在私有自编码器上花费的当前隐私损失$\varepsilon'$的值。当$\varepsilon'$达到最终隐私预算$\varepsilon$时，训练结束。如果当前隐私预算$\varepsilon'$小于最终隐私预算$\varepsilon$，则网络的模型参数将通过学习率$\eta$的负方向乘以平均噪声梯度进行更新（算法2的第2行）。当前隐私预算$\varepsilon'$通过瞬时会计技术在算法2的第2行进行更新。在此步骤结束时，私有自编码器基于最终隐私预算$\varepsilon$输出模型参数$\theta$。
+剪裁梯度后，从均值为零、标准差为 $\sigma C$ 的高斯分布中抽取噪声，并将其添加到之前剪裁的梯度上（算法2的第8行）。在训练自编码器时，我们在每个批次迭代结束时跟踪隐私损失。如第2-2行所示，我们计算在给定迭代 $t \in T$ 中在私有自编码器上花费的当前隐私损失 $\varepsilon'$ 的值。当 $\varepsilon'$ 达到最终隐私预算 $\varepsilon$ 时，训练结束。如果当前隐私预算 $\varepsilon'$ 小于最终隐私预算 $\varepsilon$ ，则网络的模型参数将通过学习率 $\eta$ 的负方向乘以平均噪声梯度进行更新（算法2的第2行）。当前隐私预算 $\varepsilon'$ 通过瞬时会计技术在算法2的第2行进行更新。在此步骤结束时，私有自编码器基于最终隐私预算 $\varepsilon$ 输出模型参数 $\theta$ 。
 
 ![Algorithm 2 DP-Auto: Differentially private auto-encoder](./images/2023-05-02-09-37-20.png)
 
