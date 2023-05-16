@@ -44,11 +44,11 @@
 
 加强学习算法
 
-![图 1](../../images/9dbead63c91d13cf14ddd4088eaeb1a9e5bd27e05b00c6a53455ec0f24ff0f26.png)  
+![图 1](../../images/9dbead63c91d13cf14ddd4088eaeb1a9e5bd27e05b00c6a53455ec0f24ff0f26.png)
 
 网络拓扑参考
 
-![图 2](../../images/7f073d826cee64256cbcf73e9122d45a6419d561dba01846f4cbb5c64438c118.png)  
+![图 2](../../images/7f073d826cee64256cbcf73e9122d45a6419d561dba01846f4cbb5c64438c118.png)
 
 ## [面向网络欺骗防御的攻击诱捕技术研究](https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C44YLTlOAiTRKibYlV5Vjs7iJTKGjg9uTdeTsOI_ra5_XWtPO6KuPDQ5qOFqKpAUk6TZHd3T203lr0zm6dGE5-YU&uniplatform=NZKPT)
 
@@ -94,7 +94,7 @@
 
 ### 攻击诱捕概念及典型架构分析
 
-![攻击诱捕系统结构](../../images/7b60b746392090f5017b73ae158eeabf488d0a8427da2fafe826a93c580366af.png)  
+![攻击诱捕系统结构](../../images/7b60b746392090f5017b73ae158eeabf488d0a8427da2fafe826a93c580366af.png)
 
 - [9]在引诱攻击方面主要有间接引诱和直接引诱
   - [10]间接引诱是指攻击者由于非法使用诱饵信息或出现其他攻击行为被管理员发现后迁移至诱捕系统中。
@@ -225,7 +225,7 @@
 
 ### Note
 
-![论文结构总结](../../images/cc7677ea17c91fd2d7d0a53c344f84bb3c526a539c713cb13258285e3d56e9d2.png)  
+![论文结构总结](../../images/cc7677ea17c91fd2d7d0a53c344f84bb3c526a539c713cb13258285e3d56e9d2.png)
 
 几个研究重点
 
@@ -256,7 +256,7 @@
 
 #### 基于拟态思想的蜜罐设计
 
-![拟态构造蜜罐结构图](../../images/860073369e94a16ea047b001b86469e1e85b7d457832df32cc61db210395fd2d.png)  
+![拟态构造蜜罐结构图](../../images/860073369e94a16ea047b001b86469e1e85b7d457832df32cc61db210395fd2d.png)
 
 - 代理模块
 - 异构执行体
@@ -269,7 +269,7 @@
   - 保存相关数据以还原攻击者的攻击手段，获取攻击者利用的漏洞，同时对虚拟化
 平台进行更新升级，修补漏洞。
 
-![异构执行体实现示例图](../../images/738172072f032bbaba3b9a8f184cfbcec48efd1c768e04e2f7c74eb12c34b329.png)  
+![异构执行体实现示例图](../../images/738172072f032bbaba3b9a8f184cfbcec48efd1c768e04e2f7c74eb12c34b329.png)
 
 这里面有解释为什么会异构吗？
 > 防止虚拟机逃逸
